@@ -84,7 +84,7 @@ if st.button("Scan URL"):
         st.error("Please enter the URL.")
     else:
         try:
-            response = requests.post("http://127.0.0.1:8000/predict/", json={"url": url})
+            response = requests.post("https://fraud-url-detector-wn2y.onrender.com/predict/", json={"url": url})
             if response.status_code == 200:
                 result = response.json()
                 prediction = result.get("prediction", "Unknown").strip().lower()
