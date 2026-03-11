@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
-from feature_extractor import extract_features
+from backend.feature_extractor import extract_features
 
 app = FastAPI()
 
-model = joblib.load("model.pkl")
+model = joblib.load("backend/model.pkl")
 
 class URLInput(BaseModel):
     url: str
