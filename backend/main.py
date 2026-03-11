@@ -5,6 +5,10 @@ from backend.feature_extractor import extract_features
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"message": "Fraud URL Detector API is running"}
+
 model = joblib.load("backend/model.pkl")
 
 class URLInput(BaseModel):
